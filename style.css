@@ -1,0 +1,1558 @@
+/* ===================================================================
+   PREMIUM WEDDING INVITATION WEBSITE - STYLE.CSS
+   Design Theme: Indian Spiritual Elegance with Tirupati Inspiration
+   =================================================================== */
+
+/* ==================== 1. CSS VARIABLES & ROOT SETTINGS ==================== */
+:root {
+    /* Color Palette */
+    --primary-maroon: #8B0000;
+    --secondary-gold: #DAA520;
+    --accent-gold: #FFD700;
+    --divine-orange: #FF6347;
+    --sacred-saffron: #FF9933;
+    --cream-bg: #FFF8E7;
+    --light-cream: #FFFAF0;
+    --dark-brown: #3E2723;
+    --text-dark: #2C1810;
+    --text-light: #6D4C41;
+    --white: #FFFFFF;
+    --soft-shadow: rgba(0, 0, 0, 0.1);
+    --gold-shadow: rgba(218, 165, 32, 0.3);
+    
+    /* Fonts */
+    --font-display: 'Playfair Display', serif;
+    --font-elegant: 'Cormorant Garamond', serif;
+    --font-decorative: 'Great Vibes', cursive;
+    --font-modern: 'Cinzel', serif;
+    --font-body: 'Poppins', sans-serif;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 6rem;
+    
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 15px;
+    --radius-lg: 25px;
+    --radius-circle: 50%;
+    
+    /* Transitions */
+    --transition-fast: 0.3s ease;
+    --transition-smooth: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==================== 2. GLOBAL RESET & BASE STYLES ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-body);
+    background: linear-gradient(135deg, var(--cream-bg) 0%, var(--light-cream) 100%);
+    background-attachment: fixed;
+    color: var(--text-dark);
+    line-height: 1.7;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Spiritual Background Pattern */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(255, 153, 51, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(218, 165, 32, 0.05) 0%, transparent 50%),
+        repeating-linear-gradient(90deg, transparent, transparent 50px, rgba(218, 165, 32, 0.02) 50px, rgba(218, 165, 32, 0.02) 51px);
+    background-size: cover, cover, 100px 100px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Add subtle Om symbols pattern */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-size="40" opacity="0.03" fill="%23DAA520">ॐ</text></svg>');
+    background-size: 200px 200px;
+    background-repeat: repeat;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ==================== 3. TYPOGRAPHY ==================== */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--primary-maroon);
+}
+
+h1 { font-size: clamp(2.5rem, 6vw, 5rem); }
+h2 { font-size: clamp(2rem, 4vw, 3.5rem); }
+h3 { font-size: clamp(1.5rem, 3vw, 2.5rem); }
+h4 { font-size: clamp(1.25rem, 2.5vw, 2rem); }
+
+p {
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
+    line-height: 1.8;
+    color: var(--text-light);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-fast);
+}
+
+/* ==================== 4. DIVINE PARTICLES ANIMATION ==================== */
+.divine-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.divine-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: radial-gradient(circle, var(--accent-gold), transparent);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: float-particle linear infinite;
+}
+
+@keyframes float-particle {
+    0% {
+        transform: translateY(100vh) translateX(0) scale(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-100px) translateX(100px) scale(1);
+        opacity: 0;
+    }
+}
+
+/* ==================== 5. FLOWER PETALS ANIMATION ==================== */
+.flower-petals {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.petal {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: radial-gradient(ellipse, #FFB6C1, #FF69B4);
+    border-radius: 50% 0 50% 0;
+    opacity: 0.7;
+    animation: fall-petal linear infinite;
+}
+
+@keyframes fall-petal {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* ==================== 6. MUSIC CONTROL ==================== */
+.music-control {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 65px;
+    height: 65px;
+    background: linear-gradient(135deg, var(--secondary-gold), var(--accent-gold));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 8px 25px var(--gold-shadow);
+    transition: var(--transition-smooth);
+    border: 3px solid var(--white);
+}
+
+.music-control:hover {
+    transform: scale(1.1) rotate(15deg);
+    box-shadow: 0 12px 35px var(--gold-shadow);
+}
+
+.music-control i {
+    font-size: 1.5rem;
+    color: var(--white);
+    z-index: 2;
+}
+
+.music-waves {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    opacity: 0;
+    transition: var(--transition-fast);
+}
+
+.music-control.playing .music-waves {
+    opacity: 1;
+}
+
+.music-control.playing i {
+    opacity: 0;
+}
+
+.music-waves span {
+    width: 3px;
+    height: 15px;
+    background: var(--white);
+    border-radius: 3px;
+    animation: wave-animation 1s ease-in-out infinite;
+}
+
+.music-waves span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.music-waves span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes wave-animation {
+    0%, 100% { height: 8px; }
+    50% { height: 20px; }
+}
+
+/* ==================== 7. NAVIGATION BAR ==================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    z-index: 999;
+    box-shadow: 0 4px 20px var(--soft-shadow);
+    transition: var(--transition-smooth);
+    transform: translateY(0);
+}
+
+.navbar.hidden {
+    transform: translateY(-100%);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-modern);
+    font-size: 1.5rem;
+    color: var(--primary-maroon);
+    font-weight: 600;
+}
+
+.nav-logo i {
+    color: var(--secondary-gold);
+    font-size: 1.8rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.nav-link {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    position: relative;
+    transition: var(--transition-fast);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--secondary-gold), var(--accent-gold));
+    transition: var(--transition-fast);
+}
+
+.nav-link:hover {
+    color: var(--secondary-gold);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    width: 28px;
+    height: 3px;
+    background: var(--primary-maroon);
+    border-radius: 3px;
+    transition: var(--transition-fast);
+}
+
+/* ==================== 8. HERO SECTION ==================== */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* Using Lord Ganesha background image */
+    background: 
+        linear-gradient(135deg, rgba(139, 0, 0, 0.75) 0%, rgba(139, 0, 0, 0.70) 100%),
+        url('images/lord-ganesha-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 30% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 50%, rgba(218, 165, 32, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 2rem;
+    max-width: 1200px;
+}
+
+.divine-symbol {
+    font-size: 4rem;
+    color: var(--accent-gold);
+    margin-bottom: 2rem;
+    animation: pulse-glow 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        transform: scale(1);
+    }
+    50% {
+        text-shadow: 0 0 40px rgba(255, 215, 0, 0.8);
+        transform: scale(1.05);
+    }
+}
+
+.invocation {
+    margin-bottom: 2rem;
+}
+
+.sanskrit-text {
+    font-family: var(--font-elegant);
+    font-size: 1.8rem;
+    color: var(--accent-gold);
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 0.5rem;
+}
+
+.english-text {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.save-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.save-date .text {
+    font-family: var(--font-modern);
+    font-size: 1.2rem;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.ornament-left,
+.ornament-right {
+    color: var(--accent-gold);
+    font-size: 1.5rem;
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.couple-names-hero {
+    font-family: var(--font-decorative);
+    font-size: clamp(3rem, 8vw, 7rem);
+    color: var(--white);
+    margin: 2rem 0;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.bride-name,
+.groom-name {
+    background: linear-gradient(135deg, var(--accent-gold) 0%, var(--white) 50%, var(--accent-gold) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shine-text 4s linear infinite;
+}
+
+@keyframes shine-text {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.heart-divider {
+    color: #FF6B6B;
+    font-size: clamp(2rem, 5vw, 4rem);
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(1);
+    }
+}
+
+.wedding-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.date-ornament {
+    color: var(--accent-gold);
+    font-size: 1.5rem;
+}
+
+.date-text {
+    font-family: var(--font-elegant);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    color: var(--white);
+    font-weight: 500;
+}
+
+.muhurtham-time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    font-size: 1.3rem;
+    color: var(--accent-gold);
+    margin: 1.5rem 0;
+    font-family: var(--font-body);
+}
+
+.hero-location {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 1.5rem 0;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--white);
+    font-size: 0.9rem;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+.scroll-icon {
+    width: 30px;
+    height: 45px;
+    border: 2px solid var(--white);
+    border-radius: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 8px;
+}
+
+.scroll-icon i {
+    font-size: 0.8rem;
+    animation: scroll-arrow 1.5s ease-in-out infinite;
+}
+
+@keyframes scroll-arrow {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(10px);
+        opacity: 1;
+    }
+}
+
+/* Hero Decorations */
+.hero-decoration {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.2), transparent);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.hero-decoration.top-left {
+    top: -100px;
+    left: -100px;
+}
+
+.hero-decoration.top-right {
+    top: -100px;
+    right: -100px;
+}
+
+.hero-decoration.bottom-left {
+    bottom: -100px;
+    left: -100px;
+}
+
+.hero-decoration.bottom-right {
+    bottom: -100px;
+    right: -100px;
+}
+
+/* ==================== 9. ANIMATION UTILITIES ==================== */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+.delay-5 { animation-delay: 1s; }
+.delay-6 { animation-delay: 1.2s; }
+.delay-7 { animation-delay: 1.4s; }
+
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-on-scroll.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==================== 10. SECTION COMMON STYLES ==================== */
+.section-padding {
+    padding: 6rem 2rem;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.section-ornament {
+    color: var(--secondary-gold);
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--primary-maroon);
+    margin: 1rem 0;
+    position: relative;
+}
+
+.section-subtitle {
+    font-family: var(--font-elegant);
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    color: var(--text-light);
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+/* ==================== 11. COUNTDOWN SECTION ==================== */
+.countdown-section {
+    background: linear-gradient(135deg, var(--light-cream) 0%, var(--cream-bg) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.countdown-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.countdown-box {
+    text-align: center;
+}
+
+.countdown-circle {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1.5rem;
+}
+
+.countdown-svg {
+    transform: rotate(-90deg);
+    width: 100%;
+    height: 100%;
+}
+
+.countdown-svg circle {
+    fill: none;
+    stroke-width: 8;
+}
+
+.countdown-svg circle:first-child {
+    stroke: rgba(218, 165, 32, 0.2);
+}
+
+.countdown-svg circle:last-child {
+    stroke: var(--secondary-gold);
+    stroke-dasharray: 282.7;
+    stroke-dashoffset: 282.7;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1s ease;
+}
+
+.countdown-number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-maroon);
+}
+
+.countdown-label {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+/* ==================== 12. COUPLE SECTION ==================== */
+.couple-section {
+    background: var(--white);
+    position: relative;
+}
+
+.couple-container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.couple-card {
+    background: var(--light-cream);
+    border-radius: var(--radius-lg);
+    padding: 3rem;
+    box-shadow: 0 15px 50px var(--soft-shadow);
+    transition: var(--transition-smooth);
+}
+
+.couple-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 70px rgba(139, 0, 0, 0.15);
+}
+
+.couple-image-wrapper {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.couple-image-frame {
+    position: relative;
+    width: 300px;
+    height: 380px;
+    margin: 0 auto;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 15px 40px var(--soft-shadow);
+}
+
+.couple-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-slow);
+}
+
+.couple-card:hover .couple-image {
+    transform: scale(1.05);
+}
+
+.image-decoration {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--secondary-gold);
+    z-index: 1;
+}
+
+.image-decoration.corner-tl {
+    top: -10px;
+    left: -10px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.image-decoration.corner-tr {
+    top: -10px;
+    right: -10px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.image-decoration.corner-bl {
+    bottom: -10px;
+    left: -10px;
+    border-right: none;
+    border-top: none;
+}
+
+.image-decoration.corner-br {
+    bottom: -10px;
+    right: -10px;
+    border-left: none;
+    border-top: none;
+}
+
+.couple-icon {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--secondary-gold), var(--accent-gold));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 20px var(--gold-shadow);
+    border: 3px solid var(--white);
+}
+
+.couple-icon i {
+    color: var(--white);
+    font-size: 1.3rem;
+}
+
+.couple-info {
+    text-align: center;
+    padding-top: 1.5rem;
+}
+
+.couple-name {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--primary-maroon);
+    margin-bottom: 0.5rem;
+}
+
+.couple-role {
+    font-family: var(--font-elegant);
+    font-size: 1.2rem;
+    color: var(--secondary-gold);
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.couple-divider {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--secondary-gold), transparent);
+    margin: 1.5rem auto;
+}
+
+.couple-description {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+.couple-description strong {
+    color: var(--text-dark);
+}
+
+.couple-heart-divider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.heart-container {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.beating-heart {
+    font-size: 3rem;
+    color: #FF6B6B;
+    animation: heartbeat 1.5s ease-in-out infinite;
+    z-index: 2;
+}
+
+.heart-glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 107, 107, 0.3), transparent);
+    border-radius: 50%;
+    animation: glow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 0;
+    }
+}
+
+.divider-text {
+    font-family: var(--font-elegant);
+    font-size: 1.2rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+/* ==================== 14. EVENTS SECTION ==================== */
+.events-section {
+    background: linear-gradient(135deg, #FFF8E7 0%, #FFFAF0 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Divine Background for Events Section - Hindu Cultural Theme */
+.events-divine-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Using local Lord Ganesha image */
+    background: 
+        linear-gradient(135deg, rgba(255, 248, 231, 0.70) 0%, rgba(255, 250, 240, 0.75) 100%),
+        url('images/lord-ganesha-bg.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.40;
+    pointer-events: none;
+    z-index: 0;
+    filter: sepia(20%) saturate(80%);
+}
+
+/* Alternative high-quality Hindu deity backgrounds from Unsplash:
+   
+   Lord Ganesha (Best quality):
+   - Golden Ganesha: https://images.unsplash.com/photo-1580489944761-15a19d654956
+   - Temple Ganesha: https://images.unsplash.com/photo-1580492516014-4a28466d55df
+   - Ganesha Statue: https://images.unsplash.com/photo-1582468546235-34529a94e5ff
+   
+   Lord Vishnu/Temple:
+   - https://images.unsplash.com/photo-1591825533715-5f8b839039d1
+   - https://images.unsplash.com/photo-1548013146-72479768bada
+   
+   Hindu Wedding Symbols:
+   - Mandala: https://images.unsplash.com/photo-1551190822-a9333d879b1f
+   - Om Symbol: https://images.unsplash.com/photo-1566408669687-4768a4db3e83
+*/
+
+/* Additional decorative layer with sacred saffron glow */
+.events-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(255, 153, 51, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(218, 165, 32, 0.12) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Large Om symbol watermark for Hindu culture */
+.events-section::after {
+    content: '॥ ॐ ॥';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20rem;
+    color: var(--secondary-gold);
+    opacity: 0.04;
+    font-family: var(--font-elegant);
+    font-weight: 700;
+    pointer-events: none;
+    z-index: 0;
+    text-shadow: 0 0 40px rgba(218, 165, 32, 0.4);
+    letter-spacing: 1rem;
+}
+
+.events-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.event-card {
+    background: var(--light-cream);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 15px 40px var(--soft-shadow);
+    transition: var(--transition-smooth);
+    position: relative;
+}
+
+.event-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 60px rgba(139, 0, 0, 0.2);
+}
+
+.featured-event {
+    border: 3px solid var(--secondary-gold);
+}
+
+.featured-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, var(--secondary-gold), var(--accent-gold));
+    color: var(--white);
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    z-index: 10;
+    box-shadow: 0 5px 15px var(--gold-shadow);
+}
+
+.event-image-wrapper {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.event-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-slow);
+}
+
+.event-card:hover .event-image {
+    transform: scale(1.1);
+}
+
+.event-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, rgba(139, 0, 0, 0.7));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition-smooth);
+}
+
+.event-card:hover .event-overlay {
+    opacity: 1;
+}
+
+.event-icon {
+    font-size: 4rem;
+    color: var(--white);
+    transform: translateY(20px);
+    transition: var(--transition-smooth);
+}
+
+.event-card:hover .event-icon {
+    transform: translateY(0);
+}
+
+.event-content {
+    padding: 2rem;
+}
+
+.event-title {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    color: var(--primary-maroon);
+    margin-bottom: 1.5rem;
+}
+
+.event-location {
+    font-size: 1.1rem;
+    color: var(--secondary-gold);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.event-detail {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+.event-detail i {
+    color: var(--secondary-gold);
+    font-size: 1.1rem;
+}
+
+.event-description {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(139, 0, 0, 0.1);
+}
+
+/* ==================== 15. VENUE SECTION ==================== */
+.venue-section {
+    background: var(--white);
+}
+
+.venue-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    background: var(--light-cream);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 20px 60px var(--soft-shadow);
+}
+
+.venue-info {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.venue-icon {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, var(--secondary-gold), var(--accent-gold));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px var(--gold-shadow);
+}
+
+.venue-icon i {
+    font-size: 3rem;
+    color: var(--white);
+}
+
+.venue-name {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--primary-maroon);
+    margin-bottom: 1.5rem;
+}
+
+.venue-address {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.venue-address strong {
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.venue-map {
+    min-height: 500px;
+    position: relative;
+}
+
+.venue-map iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ==================== 16. BUTTONS ==================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2.5rem;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    transition: var(--transition-smooth);
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-maroon), #A00000);
+    color: var(--white);
+    box-shadow: 0 8px 25px rgba(139, 0, 0, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #A00000, var(--primary-maroon));
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(139, 0, 0, 0.4);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, var(--secondary-gold), var(--accent-gold));
+    color: var(--white);
+    box-shadow: 0 8px 25px var(--gold-shadow);
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, var(--accent-gold), var(--secondary-gold));
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px var(--gold-shadow);
+}
+
+/* ==================== 17. FOOTER ==================== */
+.footer {
+    background: linear-gradient(135deg, var(--primary-maroon) 0%, #6B0000 100%);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 2rem 3rem;
+    position: relative;
+    z-index: 10;
+}
+
+.footer-top {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.footer-blessing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-blessing i {
+    font-size: 3rem;
+    color: var(--accent-gold);
+}
+
+.blessing-text {
+    font-size: 1.3rem;
+    margin: 0.5rem 0;
+}
+
+.blessing-text.sanskrit {
+    font-family: var(--font-elegant);
+    font-size: 2rem;
+    color: var(--accent-gold);
+    font-weight: 600;
+}
+
+.blessing-text.english {
+    font-family: var(--font-body);
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.footer-middle {
+    text-align: center;
+    margin: 3rem 0;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-message {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.95;
+}
+
+.footer-families {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.family-names {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.family-names h3 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--accent-gold);
+    font-weight: 600;
+}
+
+.family-divider {
+    font-size: 1.8rem;
+    color: var(--white);
+}
+
+.footer-bottom {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+.footer-contact p {
+    margin: 0.5rem 0;
+    opacity: 0.9;
+}
+
+.footer-contact i {
+    color: var(--accent-gold);
+    margin-right: 0.5rem;
+}
+
+.footer-copyright {
+    opacity: 0.8;
+}
+
+.footer-copyright i {
+    color: #FF6B6B;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.footer-decoration {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, 
+        var(--accent-gold) 0%, 
+        var(--white) 50%, 
+        var(--accent-gold) 100%);
+}
+
+/* ==================== 18. RESPONSIVE DESIGN ==================== */
+@media (max-width: 1024px) {
+    .couple-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .couple-heart-divider {
+        order: 2;
+    }
+    
+    .venue-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .venue-map {
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        font-size: 14px;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: calc(100vh - 70px);
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        padding: 2rem;
+        box-shadow: -5px 0 20px var(--soft-shadow);
+        transition: var(--transition-smooth);
+        gap: 1.5rem;
+        align-items: flex-start;
+    }
+    
+    .nav-menu.active {
+        right: 0;
+    }
+    
+    .nav-toggle {
+        display: flex;
+    }
+    
+    .nav-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .nav-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+    
+    .section-padding {
+        padding: 4rem 1.5rem;
+    }
+    
+    .couple-names-hero {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .countdown-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-bottom {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .countdown-wrapper {
+        grid-template-columns: 1fr;
+        max-width: 200px;
+    }
+    
+    .couple-image-frame {
+        width: 100%;
+        max-width: 280px;
+        height: 350px;
+    }
+    
+    .music-control {
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+/* ==================== 19. PRINT STYLES ==================== */
+@media print {
+    .navbar,
+    .music-control,
+    .scroll-indicator,
+    .divine-particles,
+    .flower-petals {
+        display: none !important;
+    }
+    
+    .section-padding {
+        padding: 2rem 1rem;
+    }
+    
+    body {
+        background: white;
+    }
+}

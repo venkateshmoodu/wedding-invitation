@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wedding Invitation - Sindhuja & Naresh - February 21, 2026">
+    <meta name="keywords" content="wedding, invitation, Sindhuja, Naresh, marriage">
+    <title>Sindhuja & Naresh - Wedding Invitation</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Divine Particles Background Effect -->
+    <div class="divine-particles" id="divineParticles"></div>
+    
+    <!-- Flower Petals Animation -->
+    <div class="flower-petals" id="flowerPetals"></div>
+
+    <!-- Floating Music Control -->
+    <div class="music-control" id="musicControl" onclick="toggleMusic()">
+        <i class="fas fa-music" id="musicIcon"></i>
+        <div class="music-waves">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <!-- Background Audio -->
+    <audio id="bgMusic" loop preload="auto">
+        <source src="music/wedding-music.mp3" type="audio/mp3">
+        <source src="music/wedding-music.ogg" type="audio/ogg">
+    </audio>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-om"></i>
+                <span>S & N</span>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#couple" class="nav-link">Couple</a></li>
+                <li><a href="#events" class="nav-link">Events</a></li>
+                <li><a href="#venue" class="nav-link">Venue</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <!-- Divine Symbol -->
+            <div class="divine-symbol fade-in-up">
+                <i class="fas fa-om"></i>
+            </div>
+            
+            <!-- Invocation -->
+            <div class="invocation fade-in-up delay-1">
+                <p class="sanskrit-text">|| श्री गणेशाय नमः ||</p>
+                <p class="english-text">Shree Ganeshaya Namah</p>
+            </div>
+
+            <!-- Save the Date -->
+            <div class="save-date fade-in-up delay-2">
+                <span class="ornament-left">✦</span>
+                <span class="text">Save The Date</span>
+                <span class="ornament-right">✦</span>
+            </div>
+
+            <!-- Couple Names with Shine Effect -->
+            <h1 class="couple-names-hero fade-in-up delay-3">
+                <span class="bride-name">Sindhuja</span>
+                <span class="heart-divider">
+                    <i class="fas fa-heart"></i>
+                </span>
+                <span class="groom-name">Naresh</span>
+            </h1>
+
+            <!-- Wedding Date -->
+            <div class="wedding-date fade-in-up delay-4">
+                <div class="date-ornament">❖</div>
+                <p class="date-text">Saturday, 21st February 2026</p>
+                <div class="date-ornament">❖</div>
+            </div>
+
+            <!-- Muhurtham Time -->
+            <div class="muhurtham-time fade-in-up delay-5">
+                <i class="far fa-clock"></i>
+                <span>Muhurtham: 3:32 AM</span>
+            </div>
+
+            <!-- Location -->
+            <div class="hero-location fade-in-up delay-6">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Thurpu Thanda, Enugal, Warangal</span>
+            </div>
+
+            <!-- Scroll Down Indicator -->
+            <div class="scroll-indicator fade-in-up delay-7">
+                <div class="scroll-icon">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <span>Scroll to Explore</span>
+            </div>
+        </div>
+
+        <!-- Decorative Elements -->
+        <div class="hero-decoration top-left"></div>
+        <div class="hero-decoration top-right"></div>
+        <div class="hero-decoration bottom-left"></div>
+        <div class="hero-decoration bottom-right"></div>
+    </header>
+
+    <!-- Countdown Timer Section -->
+    <section class="countdown-section section-padding" id="countdown">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-ornament">✦</div>
+                <h2 class="section-title">Counting Every Moment</h2>
+                <p class="section-subtitle">Until we become one</p>
+                <div class="section-ornament">✦</div>
+            </div>
+
+            <div class="countdown-wrapper">
+                <div class="countdown-box reveal-on-scroll">
+                    <div class="countdown-circle">
+                        <svg class="countdown-svg" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45"></circle>
+                            <circle cx="50" cy="50" r="45" class="countdown-progress"></circle>
+                        </svg>
+                        <div class="countdown-number" id="days">00</div>
+                    </div>
+                    <p class="countdown-label">Days</p>
+                </div>
+
+                <div class="countdown-box reveal-on-scroll delay-1">
+                    <div class="countdown-circle">
+                        <svg class="countdown-svg" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45"></circle>
+                            <circle cx="50" cy="50" r="45" class="countdown-progress"></circle>
+                        </svg>
+                        <div class="countdown-number" id="hours">00</div>
+                    </div>
+                    <p class="countdown-label">Hours</p>
+                </div>
+
+                <div class="countdown-box reveal-on-scroll delay-2">
+                    <div class="countdown-circle">
+                        <svg class="countdown-svg" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45"></circle>
+                            <circle cx="50" cy="50" r="45" class="countdown-progress"></circle>
+                        </svg>
+                        <div class="countdown-number" id="minutes">00</div>
+                    </div>
+                    <p class="countdown-label">Minutes</p>
+                </div>
+
+                <div class="countdown-box reveal-on-scroll delay-3">
+                    <div class="countdown-circle">
+                        <svg class="countdown-svg" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45"></circle>
+                            <circle cx="50" cy="50" r="45" class="countdown-progress"></circle>
+                        </svg>
+                        <div class="countdown-number" id="seconds">00</div>
+                    </div>
+                    <p class="countdown-label">Seconds</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Couple Section -->
+    <section class="couple-section section-padding" id="couple">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-ornament">✦</div>
+                <h2 class="section-title">The Happy Couple</h2>
+                <p class="section-subtitle">Two souls united by divine grace</p>
+                <div class="section-ornament">✦</div>
+            </div>
+
+            <div class="couple-container">
+                <!-- Bride Card -->
+                <div class="couple-card reveal-on-scroll">
+                    <div class="couple-card-inner">
+                        <div class="couple-image-wrapper">
+                            <div class="couple-image-frame">
+                                <div class="image-decoration corner-tl"></div>
+                                <div class="image-decoration corner-tr"></div>
+                                <div class="image-decoration corner-bl"></div>
+                                <div class="image-decoration corner-br"></div>
+                                <img src="images/Bride.jpeg" alt="Bride - Sindhuja" class="couple-image" onerror="this.src='https://via.placeholder.com/400x500/d4af37/ffffff?text=Sindhuja'">
+                            </div>
+                            <div class="couple-icon bride-icon">
+                                <i class="fas fa-crown"></i>
+                            </div>
+                        </div>
+                        <div class="couple-info">
+                            <h3 class="couple-name">Moodu Sindhuja</h3>
+                            <p class="couple-role">The Bride</p>
+                            <div class="couple-divider"></div>
+                            <p class="couple-description">
+                                Daughter of<br>
+                                <strong>Mr. Moodu Ravi (Hari)</strong> & <strong>Mrs. Moodu Padma</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Heart Divider -->
+                <div class="couple-heart-divider reveal-on-scroll delay-1">
+                    <div class="heart-container">
+                        <i class="fas fa-heart beating-heart"></i>
+                        <div class="heart-glow"></div>
+                    </div>
+                    <div class="divider-text">United in Love</div>
+                </div>
+
+                <!-- Groom Card -->
+                <div class="couple-card reveal-on-scroll delay-2">
+                    <div class="couple-card-inner">
+                        <div class="couple-image-wrapper">
+                            <div class="couple-image-frame">
+                                <div class="image-decoration corner-tl"></div>
+                                <div class="image-decoration corner-tr"></div>
+                                <div class="image-decoration corner-bl"></div>
+                                <div class="image-decoration corner-br"></div>
+                                <img src="images/Groom.jpeg" alt="Groom - Naresh" class="couple-image" onerror="this.src='https://via.placeholder.com/400x500/800000/ffffff?text=Naresh'">
+                            </div>
+                            <div class="couple-icon groom-icon">
+                                <i class="fas fa-crown"></i>
+                            </div>
+                        </div>
+                        <div class="couple-info">
+                            <h3 class="couple-name">Gogulothu Naresh</h3>
+                            <p class="couple-role">The Groom</p>
+                            <div class="couple-divider"></div>
+                            <p class="couple-description">
+                                Son of<br>
+                                <strong>Mr. Gogulothu Bhadru</strong> & <strong>Mrs. Gogulothu Kallamma</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Wedding Events Section -->
+    <section class="events-section section-padding" id="events">
+        <div class="events-divine-bg"></div>
+        <div class="container">
+            <div class="section-header">
+                <div class="section-ornament">✦</div>
+                <h2 class="section-title">Wedding Ceremonies</h2>
+                <p class="section-subtitle">Celebrate with us through these sacred rituals</p>
+                <div class="section-ornament">✦</div>
+            </div>
+
+            <div class="events-grid">
+                <!-- Haldi Ceremony -->
+                <div class="event-card reveal-on-scroll">
+                    <div class="event-card-inner">
+                        <div class="event-image-wrapper">
+                            <img src="images/haldi-ceremony.jpg" alt="Haldi Ceremony" class="event-image">
+                            <div class="event-overlay">
+                                <i class="fas fa-sun event-icon"></i>
+                            </div>
+                        </div>
+                        <div class="event-content">
+                            <h3 class="event-title">Haldi Ceremony</h3>
+                            <div class="event-detail">
+                                <i class="far fa-calendar"></i>
+                                <span>20th February 2026</span>
+                            </div>
+                            <div class="event-detail">
+                                <i class="far fa-clock"></i>
+                                <span>7:00 PM</span>
+                            </div>
+                            <p class="event-description">
+                                A traditional ceremony where turmeric paste is applied to the bride and groom for purification and blessing.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Muhurtham -->
+                <div class="event-card reveal-on-scroll delay-1 featured-event">
+                    <div class="featured-badge">
+                        <i class="fas fa-star"></i>
+                        <span>Main Event</span>
+                    </div>
+                    <div class="event-card-inner">
+                        <div class="event-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=600&q=80" alt="Wedding Ceremony" class="event-image">
+                            <div class="event-overlay">
+                                <i class="fas fa-om event-icon"></i>
+                            </div>
+                        </div>
+                        <div class="event-content">
+                            <h3 class="event-title">Wedding Ceremony (Muhurtham)</h3>
+                            <div class="event-detail">
+                                <i class="far fa-calendar"></i>
+                                <span>21st February 2026</span>
+                            </div>
+                            <div class="event-detail">
+                                <i class="far fa-clock"></i>
+                                <span>3:32 AM</span>
+                            </div>
+                            <p class="event-description">
+                                The sacred wedding ceremony performed at the auspicious muhurtham, uniting two souls in holy matrimony.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reception -->
+                <div class="event-card reveal-on-scroll delay-2">
+                    <div class="event-card-inner">
+                        <div class="event-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80" alt="Reception" class="event-image">
+                            <div class="event-overlay">
+                                <i class="fas fa-glass-cheers event-icon"></i>
+                            </div>
+                        </div>
+                        <div class="event-content">
+                            <h3 class="event-title">Wedding Reception</h3>
+                            <p class="event-location"><strong>At Bride's Home</strong></p>
+                            <div class="event-detail">
+                                <i class="far fa-calendar"></i>
+                                <span>21st February 2026</span>
+                            </div>
+                            <div class="event-detail">
+                                <i class="far fa-clock"></i>
+                                <span>From 12:00 PM Onwards</span>
+                            </div>
+                            <p class="event-description">
+                                Join us for an afternoon celebration with lunch, blessings, and warm wishes for the couple.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Venue Section -->
+    <section class="venue-section section-padding" id="venue">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-ornament">✦</div>
+                <h2 class="section-title">Venue Location</h2>
+                <p class="section-subtitle">Where our forever begins</p>
+                <div class="section-ornament">✦</div>
+            </div>
+
+            <div class="venue-container reveal-on-scroll">
+                <div class="venue-info">
+                    <div class="venue-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3 class="venue-name">Our Residence</h3>
+                    <div class="venue-address">
+                        <p><strong>Thurpu Thanda, Enugal</strong></p>
+                        <p>Warangal District</p>
+                        <p>Telangana, India</p>
+                    </div>
+                    <div class="venue-actions">
+                        <a href="https://www.google.com/maps" target="_blank" class="btn btn-primary">
+                            <i class="fas fa-directions"></i>
+                            Get Directions
+                        </a>
+                    </div>
+                </div>
+
+                <div class="venue-map">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30725.195825695934!2d79.57438!3d18.00298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a334f5e9c5f5555%3A0x5555555555555555!2sWarangal%2C%20Telangana!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-blessing">
+                    <i class="fas fa-om"></i>
+                    <p class="blessing-text sanskrit">|| शुभम् भवतु ||</p>
+                    <p class="blessing-text english">May there be auspiciousness</p>
+                </div>
+            </div>
+
+            <div class="footer-middle">
+                <p class="footer-message">
+                    We request the honour of your presence as we unite in holy matrimony.<br>
+                    Your blessings mean the world to us.
+                </p>
+            </div>
+
+            <div class="footer-families">
+                <div class="family-names">
+                    <h3>Moodu Family</h3>
+                    <span class="family-divider">&</span>
+                    <h3>Gogulothu Family</h3>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-contact">
+                    <p>For any queries, please contact:</p>
+                    <p><i class="fas fa-phone"></i> +91 6302815792</p>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2026 Sindhuja & Naresh Wedding. Made with <i class="fas fa-heart"></i></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Decorative Footer Elements -->
+        <div class="footer-decoration"></div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
